@@ -1,286 +1,297 @@
 /* =========================================================
-   Voz dos Sabores · folha de estilo
-   Cores e tipos do Brand Book V3. Mudar aqui muda o site todo.
+   Voz dos Sabores · folha de estilo (v3)
+   Referência visual: apresentações «Parceria» e «Embaixadas».
+   Mudar as variáveis abaixo muda o site todo.
    ========================================================= */
 :root {
-  --creme:        #FFF4F1;  /* fundo principal */
-  --creme-quente: #FBE6C0;  /* fundo secundário (cartões) */
-  --cobalto:      #1F4E7D;  /* títulos, rodapé */
-  --azul:         #2F6DAA;  /* links */
-  --terracota:    #E85D3B;  /* data, horas, linhas curtas */
-  --acafrao:      #F5B942;  /* pequenos acentos, com moderação */
-  --carvao:       #1A1410;  /* texto */
-  --texto:        #4A423D;  /* texto corrido, cinzento escuro */
-  --suave:        #8A807A;  /* notas */
-  --linha:        #EADFD8;  /* divisórias finas */
+  /* Cores das apresentações */
+  --creme:        #F7EBD9;  /* fundo principal */
+  --creme-claro:  #FCF5EA;  /* cartões, faixa informativa */
+  --tinta:        #222222;  /* titulares */
+  --texto:        #3F3A36;  /* texto corrido */
+  --suave:        #7D746C;  /* notas */
+  --linha:        #E6D6C0;  /* divisórias finas */
+  --coral:        #E36B49;  /* destaque, horas, linhas curtas */
+  --mostarda:     #EAAA2F;
+  --petroleo:     #466E66;  /* botões, rodapé */
+  --azulado:      #5B928A;
 
-  /* Tipos do Brand Book. Alternativa do flyer: 'Bebas Neue' (títulos em maiúsculas). */
-  --f-titulo: 'Instrument Serif', Georgia, serif;
-  --f-texto:  'Work Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --f-dados:  'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --f-titulo: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-texto:  'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --col: 760px;             /* largura da coluna de texto */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; overflow-x: clip; }
 body {
-  margin: 0;
+  margin: 0; overflow-x: clip;
   background: var(--creme);
   color: var(--texto);
-  font: 300 1.0625rem/1.75 var(--f-texto);
+  font: 400 1rem/1.75 var(--f-texto);
 }
 img { max-width: 100%; height: auto; display: block; }
-a { color: var(--azul); text-underline-offset: 3px; }
-h1, h2, h3 { color: var(--cobalto); font-weight: 400; margin: 0; }
+a { color: var(--petroleo); text-underline-offset: 3px; }
+a:hover { color: var(--coral); }
+h1, h2, h3 { color: var(--tinta); margin: 0; font-family: var(--f-titulo); text-wrap: balance; }
 p { margin: 0 0 1rem; }
+.hl { color: var(--coral); }
+.nowrap { white-space: nowrap; }
 
-.wrap { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 20px; }
+.wrap { width: 100%; max-width: var(--col); margin: 0 auto; padding: 0 20px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* Linha curta laranja */
-.rule {
-  width: 60px; height: 0; margin: 0 0 1.5rem;
-  border: 0; border-top: 2px solid var(--terracota);
-}
+/* Linha curta coral */
+.rule { width: 60px; height: 0; margin: 0 0 1.5rem; border: 0; border-top: 3px solid var(--coral); border-radius: 2px; }
 
-section.wrap { padding-top: 3.5rem; padding-bottom: 1rem; }
+/* Secções: o conteúdo fica sempre à frente dos ornamentos */
+section.wrap, .hero.wrap { position: relative; isolation: isolate; }
+section.wrap { padding-top: 4rem; padding-bottom: 1.5rem; }
 section h2 {
-  font-family: var(--f-titulo);
-  font-size: clamp(2.2rem, 7vw, 3rem);
-  line-height: 1.05;
+  font-size: clamp(1.9rem, 6.2vw, 2.75rem); font-weight: 800;
+  line-height: 1.08; letter-spacing: -.015em;
   margin-bottom: 1.25rem;
 }
 
-/* ---------- 1. HERO ---------- */
-.hero.wrap { position: relative; padding-top: 2.5rem; padding-bottom: 2.5rem; }
-.icon-cutlery {
-  position: absolute; top: 2rem; right: 20px;
-  width: 40px; height: 40px;
-  fill: none; stroke: var(--terracota); stroke-width: 1.4;
-  stroke-linecap: round; stroke-linejoin: round; opacity: .55;
+/* =========================================================
+   ORNAMENTOS (formas orgânicas das apresentações)
+   Cada .deco ocupa a largura do ecrã atrás da secção.
+   --s tamanho · --t posição vertical · --max parte visível máxima
+   ========================================================= */
+.deco {
+  position: absolute; z-index: -1; pointer-events: none;
+  top: 0; bottom: 0; left: 50%; width: 100vw; margin-left: -50vw;
+  overflow: hidden;
+  --free: calc((100vw - var(--col)) / 2 - 12px);
 }
-.label {
-  font: 500 .72rem/1.4 var(--f-texto);
-  letter-spacing: .22em; text-transform: uppercase;
-  color: var(--cobalto);
-  margin: 0 56px 1.75rem 0;
+.hero .deco { top: -80px; }            /* sobe por trás da navegação */
+.blob {
+  position: absolute; top: var(--t, 0); width: var(--s, 22rem);
+  aspect-ratio: 1; display: block;
+  transform: translate3d(0, calc(var(--py, 0px) * var(--k, 1)), 0);
 }
-.logo { width: min(180px, 44vw); margin: 0 0 1.5rem -4px; }
-.date {
-  font: 500 1.35rem/1.2 var(--f-dados);
-  color: var(--terracota); text-transform: uppercase;
-  letter-spacing: .04em; margin-bottom: .35rem;
+.blob svg {
+  width: 100%; height: 100%; display: block; overflow: visible;
+  transition: transform .65s cubic-bezier(.2,.7,.2,1), opacity .65s ease;
 }
-.time { font: 500 1.05rem/1.3 var(--f-dados); color: var(--carvao); margin-bottom: 1rem; }
-.place { font: 500 1.15rem/1.4 var(--f-texto); color: var(--cobalto); margin-bottom: .2rem; }
-.small { font-size: .9rem; color: var(--suave); margin-bottom: 1.75rem; }
-.lead { font-size: 1.15rem; color: var(--carvao); max-width: 34rem; margin-bottom: 2rem; }
+.blob use { fill: currentColor; }
+/* parte visível = margem livre ao lado da coluna, entre 40px e --max */
+.blob.r { right: calc(clamp(40px, var(--free), var(--max, 240px)) - var(--s, 22rem)); }
+.blob.l { left:  calc(clamp(40px, var(--free), var(--max, 240px)) - var(--s, 22rem)); }
+.c-coral    { color: var(--coral); }
+.c-mostarda { color: var(--mostarda); }
+.c-petroleo { color: var(--petroleo); }
+.c-azulado  { color: var(--azulado); }
 
-.btn {
-  display: inline-block;
-  background: var(--cobalto); color: #fff;
-  font: 500 .95rem/1 var(--f-texto);
-  padding: 1rem 1.5rem; border-radius: 999px;
-  text-decoration: none;
-  transition: background .2s;
-}
-.btn:hover, .btn:focus-visible { background: var(--terracota); }
-.btn-sm { padding: .8rem 1.25rem; font-size: .9rem; }
+/* Estado de entrada (só com JavaScript ativo) */
+.js .deco .blob svg { opacity: 0; transform: translate(var(--dx, 18px), 18px); }
+.js .deco .blob.l svg { --dx: -18px; }
+.js .in-view > .deco .blob svg { opacity: 1; transform: none; }
+.js .in-view > .deco .blob:nth-child(2) svg { transition-delay: .08s; }
+.js .in-view > .deco .blob:nth-child(3) svg { transition-delay: .16s; }
+.js .was-seen:not(.in-view) > .deco .blob svg { opacity: .35; transform: none; }
 
-/* ---------- 2. O FESTIVAL ---------- */
-.motto {
-  font: italic 1.5rem/1.3 var(--f-titulo);
-  color: var(--terracota); margin-top: 1.5rem;
-}
+/* Onda inferior (fecho) */
+.wave { position: absolute; z-index: -1; left: 50%; width: 100vw; margin-left: -50vw; bottom: 0; height: clamp(90px, 14vw, 180px); pointer-events: none; }
+.wave svg { width: 100%; height: 100%; display: block; transition: transform .7s cubic-bezier(.2,.7,.2,1), opacity .7s ease; }
+.js .closing:not(.in-view) .wave svg { transform: translateY(24px); opacity: 0; }
 
-/* ---------- 3. PROGRAMA ---------- */
-.timeline { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--linha); }
-.timeline li {
-  display: grid; grid-template-columns: 8.5rem 1fr; gap: 1rem;
-  align-items: baseline;
-  padding: .95rem 0; border-bottom: 1px solid var(--linha);
-}
-.timeline .t { font: 500 .9rem/1.4 var(--f-dados); color: var(--terracota); white-space: nowrap; }
-.timeline .a { font: 500 1.02rem/1.4 var(--f-texto); color: var(--cobalto); }
-
-.timeline .headliner { padding: 1.4rem 0 1.5rem; }
-.timeline .headliner .t { font-size: 1rem; }
-.timeline .headliner .a {
-  font: 400 clamp(1.8rem, 6vw, 2.3rem)/1.05 var(--f-titulo);
-}
-.timeline .headliner small {
-  display: block;
-  font: 600 .66rem/1 var(--f-texto);
-  letter-spacing: .2em; text-transform: uppercase;
-  color: var(--terracota); margin-bottom: .55rem;
+/* Telemóvel: menos formas, mais pequenas, só nas margens entre secções */
+@media (max-width: 759px) {
+  .deco .blob.desk { display: none; }
+  section.wrap > .deco { top: -1.5rem; }
+  .blob { width: calc(var(--s, 22rem) * .3); top: 0; }
+  .blob.r { right: calc(46px - var(--s, 22rem) * .3); }
+  .blob.l { left:  calc(16px - var(--s, 22rem) * .3); }
+  .hero .blob { top: 110px; }
+  .hero .blob.r { right: calc(96px - var(--s, 22rem) * .3); }
 }
 
-@media (max-width: 480px) {
-  .timeline li { grid-template-columns: 1fr; gap: .15rem; }
-}
-
-.allday {
-  margin-top: 2.25rem; padding: 1.5rem 1.5rem .75rem;
-  background: var(--creme-quente); border-radius: 14px;
-}
-.allday h3 {
-  font: 600 .72rem/1.4 var(--f-texto);
-  letter-spacing: .2em; text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-.allday ul { list-style: none; margin: 0 0 1rem; padding: 0; }
-.allday li { display: flex; align-items: center; gap: .8rem; padding: .35rem 0; color: var(--carvao); }
-.allday svg {
-  flex: none; width: 22px; height: 22px;
-  fill: none; stroke: var(--terracota); stroke-width: 1.5;
-  stroke-linecap: round; stroke-linejoin: round;
-}
-.note { font-size: .9rem; color: var(--suave); }
-
-/* ---------- 4. PARTICIPA ---------- */
-.cards { display: grid; gap: 1rem; }
-@media (min-width: 640px) { .cards { grid-template-columns: 1fr 1fr; } }
-.card {
-  display: flex; flex-direction: column; align-items: flex-start;
-  background: #fff; border: 1px solid var(--linha);
-  border-top: 3px solid var(--acafrao);
-  border-radius: 14px; padding: 1.5rem;
-}
-.card h3 { font: 400 1.7rem/1.1 var(--f-titulo); margin-bottom: .75rem; }
-.card p { flex: 1; font-size: .98rem; }
-
-/* ---------- 5. COMO CHEGAR ---------- */
-.facts { display: grid; grid-template-columns: 5.5rem 1fr; gap: .4rem 1rem; margin: 0 0 1.5rem; }
-.facts dt { font: 500 .78rem/1.9 var(--f-dados); color: var(--terracota); text-transform: uppercase; }
-.facts dd { margin: 0; color: var(--carvao); }
-.map {
-  aspect-ratio: 4 / 3; border-radius: 14px; overflow: hidden;
-  border: 1px solid var(--linha); background: var(--creme-quente);
-}
-@media (min-width: 640px) { .map { aspect-ratio: 16 / 9; } }
-.map iframe { width: 100%; height: 100%; border: 0; display: block; }
-.map-btn { margin-top: 1rem; }
-
-/* ---------- RODAPÉ ---------- */
-.footer {
-  background: var(--cobalto); color: #fff;
-  font-size: .82rem; padding: 1.6rem 0; margin-top: 2rem;
-}
-.footer p { margin: 0; }
-.footer-data { opacity: .85; margin-bottom: .6rem !important; }
-.footer-links { display: flex; flex-wrap: wrap; gap: .4rem 1.25rem; }
-.footer a { color: #fff; font-weight: 500; text-decoration: none; }
-.footer a:hover, .footer a:focus-visible { text-decoration: underline; }
-
-@media (min-width: 900px) {
-  .hero.wrap { padding-top: 4rem; }
-  .icon-cutlery { top: 3.5rem; width: 48px; height: 48px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .blob { transform: none !important; }
+  .js .deco .blob svg, .js .wave svg, .js .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
 
 /* =========================================================
-   Acrescentos v2: navegação, faixa informativa, blocos, FAQ
+   NAVEGAÇÃO
    ========================================================= */
-h1, h2 { text-wrap: balance; }
-
-/* Navegação fixa no topo */
 .topnav {
-  position: sticky; top: 0; z-index: 10;
-  background: color-mix(in srgb, var(--creme) 92%, transparent);
-  backdrop-filter: blur(6px);
+  position: sticky; top: 0; z-index: 20;
+  background: color-mix(in srgb, var(--creme) 90%, transparent);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--linha);
 }
 .topnav .wrap {
-  display: flex; align-items: center; gap: .75rem 1.25rem;
-  flex-wrap: wrap; padding-top: .6rem; padding-bottom: .6rem;
+  max-width: 1100px;
+  display: flex; align-items: center; gap: .6rem 1.25rem; flex-wrap: wrap;
+  padding-top: .6rem; padding-bottom: .6rem;
 }
-.brand {
-  display: flex; align-items: center; gap: .5rem;
-  font: 400 1.25rem/1 var(--f-titulo); color: var(--cobalto); text-decoration: none;
-}
-.brand img { width: 28px; height: auto; }
+.brand { display: flex; align-items: center; gap: .5rem; font-weight: 800; font-size: .95rem; color: var(--tinta); text-decoration: none; }
+.brand img { width: 30px; }
 .topnav ul {
   order: 3; flex: 1 0 100%;
   display: flex; gap: 1.1rem; list-style: none; margin: 0; padding: 0 0 .1rem;
   overflow-x: auto; scrollbar-width: none;
 }
 .topnav ul::-webkit-scrollbar { display: none; }
-.topnav ul a {
-  font-size: .85rem; font-weight: 500; color: var(--cobalto);
-  text-decoration: none; white-space: nowrap;
-}
-.topnav ul a:hover, .topnav ul a:focus-visible { color: var(--terracota); }
-.lang { margin: 0 0 0 auto; font: 500 .8rem/1 var(--f-dados); color: var(--suave); }
-.lang strong { color: var(--terracota); font-weight: 500; }
-.lang a { color: var(--cobalto); text-decoration: none; }
+.topnav ul a { font-size: .82rem; font-weight: 600; color: var(--tinta); text-decoration: none; white-space: nowrap; }
+.topnav ul a:hover, .topnav ul a:focus-visible, .topnav ul a[aria-current] { color: var(--coral); }
+.lang { margin: 0 0 0 auto; font-size: .8rem; font-weight: 600; color: var(--suave); }
+.lang strong { color: var(--coral); }
+.lang a { color: var(--tinta); text-decoration: none; }
 @media (min-width: 760px) {
   .topnav ul { order: 0; flex: 0 1 auto; margin-left: auto; }
   .lang { margin-left: 0; }
 }
-section[id], header[id], main[id] { scroll-margin-top: 5.5rem; }
+section[id], main[id] { scroll-margin-top: 5.5rem; }
 
-/* Primeira página */
-.hero h1 {
-  font: 400 clamp(2.6rem, 10vw, 4.2rem)/1 var(--f-titulo);
-  color: var(--cobalto); margin: 0 0 1.25rem;
-}
-.hero .label { color: var(--terracota); font-family: var(--f-dados); letter-spacing: .14em; margin-bottom: .9rem; }
+/* =========================================================
+   1. PRIMEIRA PÁGINA
+   ========================================================= */
+.hero.wrap { padding-top: 2.5rem; padding-bottom: 1rem; }
+.logo { width: min(170px, 42vw); margin: 0 0 1.5rem -4px; }
+.label { font-size: .75rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--coral); margin: 0 0 .8rem; }
+.hero h1 { font-size: clamp(2.5rem, 9.5vw, 4.4rem); font-weight: 800; line-height: 1.02; letter-spacing: -.025em; margin: 0 0 1.4rem; }
+.lead { font-size: 1.1rem; max-width: 36rem; margin-bottom: 1.75rem; }
 .infostrip {
   list-style: none; margin: 0 0 1.75rem; padding: 1rem 1.25rem;
   display: flex; flex-wrap: wrap; gap: .35rem 1.4rem;
-  background: var(--creme-quente); border-radius: 12px;
-  font: 500 .88rem/1.5 var(--f-dados); color: var(--carvao);
+  background: var(--creme-claro); border-radius: 14px;
+  font-size: .9rem; font-weight: 600; line-height: 1.5; color: var(--tinta);
+  font-variant-numeric: tabular-nums;
 }
 .infostrip li { white-space: nowrap; }
-.infostrip li::before { content: "•"; color: var(--terracota); margin-right: .5rem; }
-.infostrip strong { color: var(--terracota); font-weight: 500; }
-@media (max-width: 480px) {
-  .infostrip { flex-direction: column; }
-}
+.infostrip li::before { content: "•"; color: var(--coral); margin-right: .5rem; }
+.infostrip strong { color: var(--coral); }
+@media (max-width: 480px) { .infostrip { flex-direction: column; } }
 .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
-.btn-ghost { background: transparent; color: var(--cobalto); box-shadow: inset 0 0 0 1.5px var(--cobalto); }
-.btn-ghost:hover, .btn-ghost:focus-visible { background: var(--cobalto); color: #fff; }
 
-/* O que vais encontrar */
-.features { display: grid; gap: 1.75rem 2rem; }
+.btn {
+  display: inline-block; background: var(--petroleo); color: #fff;
+  font: 700 .92rem/1 var(--f-texto);
+  padding: 1rem 1.5rem; border-radius: 999px; text-decoration: none;
+  transition: background .2s, color .2s;
+}
+.btn:hover, .btn:focus-visible { background: var(--coral); color: #fff; }
+.btn-ghost { background: transparent; color: var(--tinta); box-shadow: inset 0 0 0 2px var(--tinta); }
+.btn-ghost:hover, .btn-ghost:focus-visible { background: var(--tinta); color: #fff; }
+:focus-visible { outline: 2px solid var(--coral); outline-offset: 3px; }
+
+/* Ilustração larga debaixo da primeira página */
+.hero-art { max-width: 1120px; margin: 2.5rem auto 0; padding: 0 20px; }
+.hero-art img { width: 100%; border-radius: 22px; }
+
+/* =========================================================
+   2–4. FESTIVAL, O QUE VAIS ENCONTRAR, GASTRONOMIA
+   ========================================================= */
+.motto { font-size: 1.3rem; font-weight: 700; line-height: 1.35; color: var(--coral); margin-top: 1.5rem; max-width: 30ch; }
+
+.features { display: grid; gap: 1.75rem 1.5rem; }
 @media (min-width: 640px) { .features { grid-template-columns: 1fr 1fr; } }
-.features article { border-top: 1px solid var(--linha); padding-top: 1rem; }
-.features h3 { font: 400 1.6rem/1.1 var(--f-titulo); margin-bottom: .5rem; }
-.features p { margin: 0; }
+.features article { display: flex; flex-direction: column; }
+.features img {
+  width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: center bottom;
+  border-radius: 16px; margin-bottom: 1rem; background: var(--creme-claro);
+}
+.features h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: .4rem; }
+.features p { margin: 0; font-size: .96rem; }
 
-/* Projetos gastronómicos (para quando houver fichas aprovadas) */
 .projects { list-style: none; margin: 0 0 1.5rem; padding: 0; display: grid; gap: 1.25rem; }
 @media (min-width: 640px) { .projects { grid-template-columns: 1fr 1fr; } }
-.projects img { border-radius: 12px; margin-bottom: .75rem; }
-.projects h3 { font: 400 1.5rem/1.1 var(--f-titulo); }
-.projects .country { font: 500 .8rem/1.6 var(--f-dados); color: var(--terracota); text-transform: uppercase; margin-bottom: .4rem; }
+.projects img { border-radius: 14px; margin-bottom: .75rem; }
+.projects h3 { font-size: 1.2rem; font-weight: 800; }
+.projects .country { font-size: .78rem; font-weight: 700; letter-spacing: .12em; color: var(--coral); text-transform: uppercase; margin-bottom: .4rem; }
 
-/* Programa */
+/* Galeria do Instagram: faixa horizontal com deslize */
+.gallery { margin-top: 2.5rem; }
+.gallery-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.gallery-head h3 { font-size: .78rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.gallery-nav { display: flex; gap: .5rem; }
+.gallery-nav button {
+  width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--tinta);
+  background: transparent; color: var(--tinta); font: 700 1rem/1 var(--f-texto); cursor: pointer;
+}
+.gallery-nav button:hover, .gallery-nav button:focus-visible { background: var(--tinta); color: #fff; }
+.gallery-nav button:disabled { opacity: .3; cursor: default; background: transparent; color: var(--tinta); }
+.strip {
+  display: grid; grid-auto-flow: column; grid-auto-columns: min(62%, 220px); gap: .9rem;
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 20px; scroll-behavior: smooth;
+  list-style: none; margin: 0 -20px; padding: .4rem 20px 1rem;
+  scrollbar-width: thin; scrollbar-color: var(--linha) transparent;
+}
+.strip li { scroll-snap-align: start; }
+.strip a { display: block; border-radius: 14px; overflow: hidden; transition: transform .25s; }
+.strip a:hover, .strip a:focus-visible { transform: translateY(-4px); }
+.strip img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; }
+
+/* =========================================================
+   5. PROGRAMA
+   ========================================================= */
 section > p + .timeline { margin-top: 1.5rem; }
-.timeline .ambient .t, .timeline .ambient .a { color: var(--suave); font-weight: 400; }
+.timeline { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--linha); }
+.timeline li {
+  display: grid; grid-template-columns: 8.5rem 1fr; gap: 1rem; align-items: baseline;
+  padding: .9rem 0; border-bottom: 1px solid var(--linha);
+}
+.timeline .t { font-size: .9rem; font-weight: 700; color: var(--coral); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.timeline .a { font-size: 1rem; font-weight: 600; color: var(--tinta); }
+.timeline .ambient .t, .timeline .ambient .a { color: var(--suave); font-weight: 500; }
+.timeline .headliner { padding: 1.4rem 0 1.5rem; }
+.timeline .headliner .a { font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 800; line-height: 1.1; letter-spacing: -.01em; }
+.timeline .headliner small { display: block; font-size: .66rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--coral); margin-bottom: .5rem; }
+@media (max-width: 480px) { .timeline li { grid-template-columns: 1fr; gap: .1rem; } }
 
-/* Participa */
-.aside { margin-top: 2rem; padding-left: 1rem; border-left: 2px solid var(--acafrao); font-size: .95rem; }
+.allday { margin-top: 2.25rem; padding: 1.5rem 1.5rem .75rem; background: var(--creme-claro); border-radius: 16px; }
+.allday h3 { font-size: .75rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 1rem; }
+.allday ul { list-style: none; margin: 0 0 1rem; padding: 0; }
+.allday li { display: flex; align-items: center; gap: .8rem; padding: .35rem 0; color: var(--tinta); font-weight: 500; }
+.allday svg { flex: none; width: 22px; height: 22px; fill: none; stroke: var(--coral); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.note { font-size: .88rem; color: var(--suave); }
+
+/* =========================================================
+   6. COMO CHEGAR
+   ========================================================= */
+.facts { display: grid; grid-template-columns: 5.5rem 1fr; gap: .45rem 1rem; margin: 0 0 1.5rem; }
+.facts dt { font-size: .72rem; font-weight: 700; letter-spacing: .12em; line-height: 2.1; color: var(--coral); text-transform: uppercase; }
+.facts dd { margin: 0; color: var(--tinta); font-weight: 500; }
+.map { aspect-ratio: 4 / 3; max-width: 100%; border-radius: 16px; overflow: hidden; border: 1px solid var(--linha); background: var(--creme-claro); }
+@media (min-width: 640px) { .map { aspect-ratio: 16 / 9; } }
+.map iframe { width: 100%; height: 100%; border: 0; display: block; }
+.map-btn { margin-top: 1rem; }
+
+/* =========================================================
+   7. PARTICIPA
+   ========================================================= */
+.participa-grid { display: grid; gap: 1.75rem; align-items: start; }
+@media (min-width: 700px) { .participa-grid { grid-template-columns: 1.3fr 1fr; } }
+.participa-grid img { border-radius: 18px; }
+.aside { margin-top: 2rem; padding-left: 1rem; border-left: 3px solid var(--mostarda); font-size: .94rem; }
 .aside p:last-child { margin-bottom: 0; }
 
-/* Perguntas frequentes */
+/* =========================================================
+   8. PERGUNTAS FREQUENTES
+   ========================================================= */
 .faq { border-top: 1px solid var(--linha); }
 .faq details { border-bottom: 1px solid var(--linha); }
-.faq summary {
-  cursor: pointer; list-style: none;
-  display: flex; justify-content: space-between; gap: 1rem;
-  padding: 1rem 0; font-weight: 500; color: var(--cobalto);
-}
+.faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0; font-weight: 700; color: var(--tinta); }
 .faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: "+"; font: 500 1.1rem/1 var(--f-dados); color: var(--terracota); }
+.faq summary::after { content: "+"; font-weight: 700; font-size: 1.2rem; line-height: 1; color: var(--coral); }
 .faq details[open] summary::after { content: "–"; }
-.faq summary:focus-visible { outline: 2px solid var(--azul); outline-offset: 2px; }
 .faq details p { margin: 0 0 1.1rem; }
 
-/* Frase de fecho */
-section.closing { padding-top: 4rem; padding-bottom: 2rem; }
-.closing p {
-  font: italic 400 clamp(1.8rem, 6vw, 2.6rem)/1.15 var(--f-titulo);
-  color: var(--terracota); max-width: 30ch; margin: 0; text-wrap: balance;
-}
+/* =========================================================
+   9. FECHO E RODAPÉ
+   ========================================================= */
+section.closing { padding-top: 4.5rem; padding-bottom: clamp(130px, 18vw, 230px); }
+.closing p { font-size: clamp(1.6rem, 5.4vw, 2.4rem); font-weight: 800; line-height: 1.15; letter-spacing: -.015em; color: var(--tinta); max-width: 26ch; margin: 0; }
+.footer { background: var(--petroleo); color: #fff; font-size: .82rem; padding: 1.6rem 0; }
+.footer p { margin: 0; }
+.footer-data { opacity: .9; margin-bottom: .6rem !important; }
+.footer-links { display: flex; flex-wrap: wrap; gap: .4rem 1.25rem; }
+.footer a { color: #fff; font-weight: 700; text-decoration: none; }
+.footer a:hover, .footer a:focus-visible { text-decoration: underline; color: #fff; }
 
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-.nowrap { white-space: nowrap; }
+/* Entrada suave das ilustrações */
+.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
+.js .reveal.in-view { opacity: 1; transform: none; }

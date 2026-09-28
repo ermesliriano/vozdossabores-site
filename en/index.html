@@ -8,7 +8,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Voz dos Sabores | Food, music and world cultures festival in Lisbon">
   <meta property="og:description" content="Voz dos Sabores: food, music and world cultures around one table in Lisbon. 17 October 2026. Free entry.">
-  <meta property="og:image" content="../img/logo.png">
+  <meta property="og:image" content="../img/ilustracoes/mesa-lisboa.webp">
   <meta property="og:locale" content="en_GB">
   <meta property="og:locale:alternate" content="pt_PT">
   <link rel="alternate" hreflang="pt-PT" href="../">
@@ -16,19 +16,30 @@
   <link rel="icon" href="../img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="../main.js" defer></script>
 </head>
 <body>
 
 <!-- =========================================================
      ENGLISH VERSION. The Portuguese version is ../index.html.
      Keep both files in step when times or details change.
+     The <div class="deco"> blocks are decoration only (shapes from the
+     presentations); they contain no text.
      ========================================================= -->
+
+<svg class="sr-only" aria-hidden="true" focusable="false"><defs>
+  <symbol id="s1" viewBox="-20 -20 440 440"><path d="M373,180C370,224 334,288 306,321C278,353 252,377 204,375C156,373 42,354 19,309C-5,265 45,154 63,107C82,60 86,37 129,29C172,20 281,30 322,55C363,81 375,135 373,180Z"/></symbol>
+  <symbol id="s2" viewBox="-20 -20 440 440"><path d="M376,196C373,235 340,297 309,325C278,353 228,379 189,363C150,348 105,269 75,234C44,199 1,192 6,153C12,114 53,9 105,-2C158,-13 278,56 323,89C368,122 378,156 376,196Z"/></symbol>
+  <symbol id="s3" viewBox="-20 -20 440 440"><path d="M399,202C407,255 377,319 337,336C297,352 211,311 160,302C109,293 47,309 31,281C15,253 34,175 63,133C91,91 162,51 200,31C237,12 254,-11 288,17C321,46 391,149 399,202Z"/></symbol>
+  <symbol id="s4" viewBox="-20 -20 440 440"><path d="M408,246C419,281 378,292 338,303C298,314 212,318 168,311C124,304 88,283 73,260C57,237 59,210 72,173C86,136 122,50 155,37C189,24 230,60 272,95C315,130 397,211 408,246Z"/></symbol>
+</defs></svg>
 
 <nav class="topnav" aria-label="Main navigation">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="../img/favicon.png" width="28" height="29" alt="">Voz dos Sabores</a>
+    <a class="brand" href="#top"><img src="../img/favicon.png" width="30" height="31" alt="">Voz dos Sabores</a>
     <ul>
       <li><a href="#festival">The festival</a></li>
       <li><a href="#food">Food</a></li>
@@ -44,15 +55,14 @@
 
   <!-- 1. HERO -->
   <header class="hero wrap">
-    <svg class="icon-cutlery" viewBox="0 0 48 48" aria-hidden="true">
-      <circle cx="24" cy="24" r="22"/>
-      <path d="M18 13v9a3 3 0 0 0 3 3v10M18 13v7M21 13v7M24 13v9a3 3 0 0 1-3 3"/>
-      <path d="M30 35V13c-2.5 1.5-3.5 5-3.5 9v3H30"/>
-    </svg>
-
+  <div class="deco" aria-hidden="true">
+    <span class="blob r c-mostarda" style="--s:30rem;--t:-1rem;--max:300px;--k:0.6"><svg><use href="#s1"/></svg></span>
+    <span class="blob r c-coral" style="--s:19rem;--t:10rem;--max:190px;--k:1"><svg><use href="#s3"/></svg></span>
+    <span class="blob l c-petroleo desk" style="--s:24rem;--t:24rem;--max:170px;--k:0.8"><svg><use href="#s2"/></svg></span>
+  </div>
     <img class="logo" src="../img/logo.png" width="462" height="480" alt="Voz dos Sabores">
     <p class="label">17 Oct 2026 · Lisbon</p>
-    <h1>There's room at the table for many cultures.</h1>
+    <h1>There's room at the table for <span class="hl">many cultures.</span></h1>
     <hr class="rule">
 
     <p class="lead">A day to discover flavours from different countries, listen to music, make things, dance and meet the people who make up Lisbon. Voz dos Sabores brings together food projects, artists and communities in a free-entry festival.</p>
@@ -71,32 +81,49 @@
     </div>
   </header>
 
+  <div class="hero-art reveal">
+    <img src="../img/ilustracoes/mesa-lisboa.webp" width="1400" height="700"
+         alt="Illustration: people from many cultures around a table full of dishes, with Lisbon's rooftops and the river behind.">
+  </div>
+
   <!-- 2. THE FESTIVAL -->
   <section class="wrap" id="festival">
+  <div class="deco" aria-hidden="true">
+    <span class="blob l c-azulado" style="--s:22rem;--t:1rem;--max:210px;--k:0.8"><svg><use href="#s4"/></svg></span>
+    <span class="blob l c-mostarda desk" style="--s:13rem;--t:13rem;--max:140px;--k:1.1"><svg><use href="#s1"/></svg></span>
+  </div>
     <hr class="rule">
-    <h2>One festival, many stories around the same table.</h2>
+    <h2>One festival, <span class="hl">many stories</span> around the same table.</h2>
     <p>Food tells stories of places, families and journeys. At Voz dos Sabores, those stories meet music, art and people from different communities. We want to create an open space where it's easy to try something new, start a conversation and feel a little closer to Lisbon.</p>
     <p class="motto">Food is where we meet. Community is what we want to build.</p>
   </section>
 
-  <!-- 3. WHAT'S ON -->
+  <!-- 3. WHAT YOU'LL FIND -->
   <section class="wrap" id="whats-on">
+  <div class="deco" aria-hidden="true">
+    <span class="blob r c-coral" style="--s:26rem;--t:3rem;--max:230px;--k:0.8"><svg><use href="#s2"/></svg></span>
+    <span class="blob r c-petroleo desk" style="--s:16rem;--t:21rem;--max:160px;--k:1.1"><svg><use href="#s4"/></svg></span>
+  </div>
     <hr class="rule">
-    <h2>What you'll find</h2>
+    <h2>What you'll <span class="hl">find</span></h2>
     <div class="features">
-      <article>
+      <article class="reveal">
+        <img src="../img/ilustracoes/sabores.webp" width="720" height="480" loading="lazy" alt="Illustration: a table with dishes from cuisines around the world.">
         <h3>Flavours of the world</h3>
         <p>Food projects from different countries bring their recipes, their stories and their own way of welcoming people to the table.</p>
       </article>
-      <article>
+      <article class="reveal">
+        <img src="../img/ilustracoes/musica.webp" width="720" height="480" loading="lazy" alt="Illustration: musicians, a DJ and people dancing.">
         <h3>Music to share</h3>
         <p>Live music and DJs keep the festival going all day. The full programme will be announced on our channels.</p>
       </article>
-      <article>
+      <article class="reveal">
+        <img src="../img/ilustracoes/arte.webp" width="720" height="480" loading="lazy" alt="Illustration: people painting and making things together.">
         <h3>Art and creativity</h3>
         <p>An art space invites young people and adults to try things out, make something and become part of the festival.</p>
       </article>
-      <article>
+      <article class="reveal">
+        <img src="../img/ilustracoes/criancas.webp" width="720" height="374" loading="lazy" alt="Illustration: two children discovering music and painting around a bowl.">
         <h3>For the little ones</h3>
         <p>We're preparing activities for children. Follow our news for the details.</p>
       </article>
@@ -105,19 +132,55 @@
 
   <!-- 4. FOOD -->
   <section class="wrap" id="food">
+  <div class="deco" aria-hidden="true">
+    <span class="blob l c-coral" style="--s:24rem;--t:2rem;--max:220px;--k:0.7"><svg><use href="#s3"/></svg></span>
+    <span class="blob l c-mostarda desk" style="--s:17rem;--t:22rem;--max:170px;--k:1"><svg><use href="#s2"/></svg></span>
+  </div>
     <hr class="rule">
-    <h2>A journey through flavours, without leaving Lisbon.</h2>
+    <h2>A journey through flavours, <span class="hl">without leaving Lisbon.</span></h2>
     <p>We're bringing together 16 food projects connected to different countries. Behind every stall are people, recipes and stories worth discovering. As participants are announced, you'll find them here and on our Instagram.</p>
 
     <!-- PROJECTS: approved details only. See the template in ../index.html. -->
 
     <a class="btn" href="https://www.instagram.com/vozdossabores/" target="_blank" rel="noopener">Meet the projects on Instagram</a>
+
+    <!-- INSTAGRAM GALLERY: images live in ../img/instagram/ -->
+    <div class="gallery">
+      <div class="gallery-head">
+        <h3>On our Instagram</h3>
+        <div class="gallery-nav">
+          <button type="button" data-dir="-1" aria-label="Previous">←</button>
+          <button type="button" data-dir="1" aria-label="Next">→</button>
+        </div>
+      </div>
+      <ul class="strip" tabindex="0" aria-label="Instagram posts">
+        <li><a href="https://www.instagram.com/vozdossabores/" target="_blank" rel="noopener"><img src="../img/instagram/a-musica-tambem-se-prova.webp" width="480" height="720" loading="lazy" alt="Instagram poster: «A música também se prova.»"></a></li>
+        <li><a href="https://www.instagram.com/vozdossabores/" target="_blank" rel="noopener"><img src="../img/instagram/ha-sabores-que-sabem-a-casa.webp" width="480" height="720" loading="lazy" alt="Instagram poster: «Há sabores que sabem a casa.»"></a></li>
+        <li><a href="https://www.instagram.com/vozdossabores/" target="_blank" rel="noopener"><img src="../img/instagram/o-mundo-cabe-em-lisboa.webp" width="480" height="720" loading="lazy" alt="Instagram poster: «O mundo cabe em Lisboa.»"></a></li>
+        <li><a href="https://www.instagram.com/vozdossabores/" target="_blank" rel="noopener"><img src="../img/instagram/a-diferenca-senta-se-a-mesa.webp" width="480" height="720" loading="lazy" alt="Instagram poster: «Aqui, a diferença senta-se à mesa.»"></a></li>
+        <li><a href="https://www.instagram.com/vozdossabores/" target="_blank" rel="noopener"><img src="../img/instagram/lisboa-fala-muitas-linguas.webp" width="480" height="720" loading="lazy" alt="Instagram poster: «Lisboa fala muitas línguas.»"></a></li>
+        <li><a href="https://www.instagram.com/vozdossabores/" target="_blank" rel="noopener"><img src="../img/instagram/entra-com-fome.webp" width="480" height="720" loading="lazy" alt="Instagram poster: «Entra com fome. Sai com histórias.»"></a></li>
+        <li><a href="https://www.instagram.com/vozdossabores/" target="_blank" rel="noopener"><img src="../img/instagram/um-prato-pode-levar-te-longe.webp" width="480" height="720" loading="lazy" alt="Instagram poster: «Um prato pode levar-te longe.»"></a></li>
+        <li><a href="https://www.instagram.com/vozdossabores/" target="_blank" rel="noopener"><img src="../img/instagram/os-sabores-tem-rosto.webp" width="480" height="720" loading="lazy" alt="Instagram poster: «Os sabores têm rosto.»"></a></li>
+        <li><a href="https://www.instagram.com/vozdossabores/" target="_blank" rel="noopener"><img src="../img/instagram/o-primeiro-ingrediente.webp" width="480" height="720" loading="lazy" alt="Instagram poster: «O primeiro ingrediente é a curiosidade.»"></a></li>
+        <li><a href="https://www.instagram.com/vozdossabores/" target="_blank" rel="noopener"><img src="../img/instagram/lisboa-tem-mesa-marcada.webp" width="480" height="720" loading="lazy" alt="Instagram poster: «Lisboa tem mesa marcada.»"></a></li>
+        <li><a href="https://www.instagram.com/vozdossabores/" target="_blank" rel="noopener"><img src="../img/instagram/vem-pelo-sabor.webp" width="480" height="720" loading="lazy" alt="Instagram poster: «Vem pelo sabor. Fica pelas pessoas.»"></a></li>
+        <li><a href="https://www.instagram.com/vozdossabores/" target="_blank" rel="noopener"><img src="../img/instagram/outubro-esta-a-chegar.webp" width="480" height="720" loading="lazy" alt="Instagram poster: «Outubro está a chegar.»"></a></li>
+      </ul>
+    </div>
   </section>
 
-  <!-- 5. PROGRAMME -->
+  <!-- 5. PROGRAMA
+       Cada linha: <li><span class="t">HORA</span><span class="a">ATIVIDADE</span></li>
+       Para acrescentar uma linha, copie uma <li> e altere o texto.
+       class="ambient" = linha de música ambiente (mais discreta). -->
   <section class="wrap" id="programme">
+  <div class="deco" aria-hidden="true">
+    <span class="blob r c-mostarda" style="--s:28rem;--t:5rem;--max:240px;--k:0.7"><svg><use href="#s4"/></svg></span>
+    <span class="blob r c-azulado desk" style="--s:18rem;--t:30rem;--max:180px;--k:1.1"><svg><use href="#s1"/></svg></span>
+  </div>
     <hr class="rule">
-    <h2>A day to listen, taste and take part.</h2>
+    <h2>A day to listen, <span class="hl">taste and take part.</span></h2>
     <p>Between food, music and activities, we want everyone to find their place at the festival.</p>
 
     <ol class="timeline">
@@ -153,10 +216,14 @@
     </div>
   </section>
 
-  <!-- 6. GETTING THERE -->
+  <!-- 6. GETTING THERE (no transport, parking or accessibility details until verified) -->
   <section class="wrap" id="getting-there">
+  <div class="deco" aria-hidden="true">
+    <span class="blob l c-petroleo" style="--s:24rem;--t:2rem;--max:210px;--k:0.8"><svg><use href="#s1"/></svg></span>
+    <span class="blob l c-coral desk" style="--s:15rem;--t:17rem;--max:150px;--k:1.1"><svg><use href="#s4"/></svg></span>
+  </div>
     <hr class="rule">
-    <h2>See you at Voz do Operário.</h2>
+    <h2>See you at <span class="hl">Voz do Operário.</span></h2>
     <p>The festival takes place at Voz do Operário in Lisbon. Save the address and come spend the day with us.</p>
     <dl class="facts">
       <dt>Address</dt><dd>A Voz do Operário · Rua da Voz do Operário 13, 1100-621 Lisboa</dd>
@@ -174,18 +241,31 @@
 
   <!-- 7. TAKE PART -->
   <section class="wrap" id="take-part">
+  <div class="deco" aria-hidden="true">
+    <span class="blob r c-coral" style="--s:26rem;--t:2rem;--max:230px;--k:0.7"><svg><use href="#s3"/></svg></span>
+    <span class="blob r c-mostarda desk" style="--s:17rem;--t:18rem;--max:180px;--k:1"><svg><use href="#s2"/></svg></span>
+  </div>
     <hr class="rule">
-    <h2>This festival is built together.</h2>
-    <p>Food projects, artists, associations, institutions and brands can help us give more room to the cultures that are part of Lisbon. If you have an idea for working together or want to know more about the project, write to us.</p>
-    <a class="btn" href="mailto:vozdossabores@gmail.com?subject=Colabora%C3%A7%C3%A3o%20Voz%20dos%20Sabores">Contact the organisers</a>
-    <div class="aside">
-      <p>This is the first edition of Voz dos Sabores. We hope the connections and partnerships that start here carry on into future editions.</p>
-      <p>We're working on the possibility of holding up to six editions in 2027. Dates and formats will be announced once they're confirmed.</p>
+    <h2>This festival is <span class="hl">built together.</span></h2>
+    <div class="participa-grid">
+      <div>
+        <p>Food projects, artists, associations, institutions and brands can help us give more room to the cultures that are part of Lisbon. If you have an idea for working together or want to know more about the project, write to us.</p>
+        <a class="btn" href="mailto:vozdossabores@gmail.com?subject=Colabora%C3%A7%C3%A3o%20Voz%20dos%20Sabores">Contact the organisers</a>
+        <div class="aside">
+          <p>This is the first edition of Voz dos Sabores. We hope the connections and partnerships that start here carry on into future editions.</p>
+          <p>We're working on the possibility of holding up to six editions in 2027. Dates and formats will be announced once they're confirmed.</p>
+        </div>
+      </div>
+      <img class="reveal" src="../img/ilustracoes/mesa-lisboa-vertical.webp" width="800" height="1067" loading="lazy"
+           alt="Illustration: a long table shared by many people, with Lisbon behind.">
     </div>
   </section>
 
   <!-- 8. FAQ -->
   <section class="wrap" id="faq">
+  <div class="deco" aria-hidden="true">
+    <span class="blob l c-mostarda" style="--s:22rem;--t:1rem;--max:200px;--k:0.8"><svg><use href="#s2"/></svg></span>
+  </div>
     <hr class="rule">
     <h2>Frequently asked questions</h2>
     <div class="faq">
@@ -214,7 +294,14 @@
 
   <!-- 9. CLOSING -->
   <section class="wrap closing">
-    <p>Come hungry to discover. Stay for the music, the people and the stories.</p>
+  <div class="wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path fill="#E36B49" d="M0,92C240,40 430,140 720,100C1000,62 1200,18 1440,70V200H0Z"/>
+      <path fill="#EAAA2F" d="M0,132C300,92 520,172 820,136C1100,104 1260,122 1440,110V200H0Z"/>
+      <path fill="#466E66" d="M0,172C260,150 560,196 900,168C1150,150 1300,176 1440,160V200H0Z"/>
+    </svg>
+  </div>
+    <p>Come hungry to discover. <span class="hl">Stay for the music, the people and the stories.</span></p>
   </section>
 
 </main>
