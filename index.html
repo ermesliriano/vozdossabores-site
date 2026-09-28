@@ -3,78 +3,149 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Voz dos Sabores · 17 outubro 2026 · Alfama, Lisboa</title>
-  <meta name="description" content="Festival gastronómico e multicultural em Alfama. Cozinhas de 18 países, música ao vivo, workshops e mercado artesanal. 17 de outubro de 2026, Voz do Operário. Entrada livre.">
-  <meta property="og:title" content="Voz dos Sabores · 17 outubro 2026">
-  <meta property="og:description" content="Um dia de sabores do mundo, música ao vivo, workshops e mercado artesanal em Alfama. Entrada livre.">
+  <title>Voz dos Sabores | Festival de gastronomia, música e culturas em Lisboa</title>
+  <meta name="description" content="No dia 17 de outubro de 2026, junta-te ao Voz dos Sabores na Voz do Operário, em Lisboa. Gastronomia de diferentes países, música, arte e atividades para famílias. Entrada gratuita, das 12h00 às 22h30.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Voz dos Sabores | Festival de gastronomia, música e culturas em Lisboa">
+  <meta property="og:description" content="Voz dos Sabores: gastronomia, música e culturas do mundo, à mesma mesa em Lisboa. 17 de outubro de 2026. Entrada gratuita.">
   <meta property="og:image" content="img/logo.png">
   <meta property="og:locale" content="pt_PT">
+  <meta property="og:locale:alternate" content="en_GB">
+  <link rel="alternate" hreflang="pt-PT" href="./">
+  <link rel="alternate" hreflang="en" href="en/">
   <link rel="icon" href="img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=JetBrains+Mono:wght@500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- =========================================================
-     Todo o texto está aqui, em HTML simples.
-     Para mudar uma hora ou um nome, basta editar o texto entre as etiquetas.
+     VERSÃO PORTUGUESA (PT-PT). A versão inglesa está em en/index.html.
+     Todo o texto está aqui, em HTML simples: para mudar uma hora ou um
+     nome, basta editar o texto entre as etiquetas.
      ========================================================= -->
 
-<main>
+<nav class="topnav" aria-label="Navegação principal">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><img src="img/favicon.png" width="28" height="29" alt="">Voz dos Sabores</a>
+    <ul>
+      <li><a href="#festival">O festival</a></li>
+      <li><a href="#gastronomia">Gastronomia</a></li>
+      <li><a href="#programa">Programa</a></li>
+      <li><a href="#como-chegar">Como chegar</a></li>
+      <li><a href="#participa">Participa</a></li>
+    </ul>
+    <p class="lang"><strong>PT</strong> · <a href="en/" hreflang="en" lang="en">EN</a></p>
+  </div>
+</nav>
 
-  <!-- 1. HERO -->
+<main id="inicio">
+
+  <!-- 1. PRIMEIRA PÁGINA -->
   <header class="hero wrap">
-    <!-- Ícone garfo & faca (canto superior direito) -->
     <svg class="icon-cutlery" viewBox="0 0 48 48" aria-hidden="true">
       <circle cx="24" cy="24" r="22"/>
       <path d="M18 13v9a3 3 0 0 0 3 3v10M18 13v7M21 13v7M24 13v9a3 3 0 0 1-3 3"/>
       <path d="M30 35V13c-2.5 1.5-3.5 5-3.5 9v3H30"/>
     </svg>
 
-    <p class="label">Festival gastronómico &amp; multicultural</p>
-
-    <img class="logo" src="img/logo.png" width="462" height="480"
-         alt="Voz dos Sabores">
-    <h1 class="sr-only">Voz dos Sabores</h1>
+    <img class="logo" src="img/logo.png" width="462" height="480" alt="Voz dos Sabores">
+    <p class="label">17 out 2026 · Lisboa</p>
+    <h1>À mesa cabem muitas culturas.</h1>
     <hr class="rule">
 
-    <p class="date">17 outubro 2026</p>
-    <p class="time">12:30 – 22:30</p>
-    <p class="place">Voz do Operário, Alfama</p>
-    <p class="small">Entrada pela Tv. de São Vicente 7 · Metro Santa Apolónia</p>
+    <p class="lead">Um dia para descobrir sabores de diferentes países, ouvir música, criar, dançar e conhecer as pessoas que fazem parte de Lisboa. O Voz dos Sabores junta projetos gastronómicos, artistas e comunidades num festival de entrada livre.</p>
 
-    <p class="lead">Um dia de sabores do mundo, música ao vivo, workshops e mercado artesanal. Entrada livre.</p>
+    <ul class="infostrip">
+      <li>Sábado, 17 de outubro</li>
+      <li>12h00–22h30</li>
+      <li>A Voz do Operário, Lisboa</li>
+      <li>Entrada pela Tv. de São Vicente 7</li>
+      <li><strong>Entrada gratuita</strong></li>
+    </ul>
 
-    <a class="btn" href="https://instagram.com/vozdossabores" target="_blank" rel="noopener">Segue-nos no Instagram</a>
+    <div class="actions">
+      <a class="btn" href="#encontrar">Descobrir o festival</a>
+      <a class="btn btn-ghost" href="#como-chegar">Como chegar</a>
+    </div>
   </header>
 
   <!-- 2. O FESTIVAL -->
   <section class="wrap" id="festival">
     <hr class="rule">
-    <h2>O festival</h2>
-    <p>Cozinhas de 18 países, de vários continentes, num só dia e no coração de Alfama.</p>
-    <p>Um encontro de culturas à volta da mesa, com música, conversa e quem traz a sua cozinha e a sua história.</p>
-    <p class="motto">Muitas cozinhas. Uma mesa.</p>
+    <h2>Um festival, muitas histórias à mesma mesa.</h2>
+    <p>A comida conta histórias de lugares, famílias e viagens. No Voz dos Sabores, essas histórias encontram-se com música, arte e pessoas de diferentes comunidades. Queremos criar um espaço aberto onde seja fácil provar algo novo, conversar e sentir Lisboa um pouco mais próxima.</p>
+    <p class="motto">A gastronomia é o ponto de encontro. A comunidade é o que queremos construir.</p>
   </section>
 
-  <!-- 3. PROGRAMA
-       Cada linha: <li><span class="t">HORA</span><span class="a">ATUAÇÃO</span></li>
-       Para acrescentar uma linha, copie uma <li> e altere o texto. -->
+  <!-- 3. O QUE VAIS ENCONTRAR -->
+  <section class="wrap" id="encontrar">
+    <hr class="rule">
+    <h2>O que vais encontrar</h2>
+    <div class="features">
+      <article>
+        <h3>Sabores do mundo</h3>
+        <p>Projetos gastronómicos de diferentes países trazem as suas receitas, histórias e formas de receber à mesa.</p>
+      </article>
+      <article>
+        <h3>Música para partilhar</h3>
+        <p>Música ao vivo e DJ acompanham o festival ao longo do dia. O programa detalhado será divulgado nos nossos canais.</p>
+      </article>
+      <article>
+        <h3>Arte e criatividade</h3>
+        <p>Um espaço artístico convida jovens e adultos a experimentar, criar e fazer parte do ambiente do festival.</p>
+      </article>
+      <article>
+        <h3>Para os mais pequenos</h3>
+        <p>Estamos a preparar atividades para as crianças. Acompanha as nossas novidades para conheceres os detalhes.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 4. GASTRONOMIA -->
+  <section class="wrap" id="gastronomia">
+    <hr class="rule">
+    <h2>Uma viagem pelos sabores, sem sair de Lisboa.</h2>
+    <p>Estamos a reunir 16 projetos gastronómicos ligados a diferentes países. Por detrás de cada banca há pessoas, receitas e histórias que vale a pena conhecer. À medida que os participantes forem anunciados, vais encontrá-los aqui e no nosso Instagram.</p>
+
+    <!-- PROJETOS: só dados aprovados pela organização. Não publicar fichas vazias.
+         Quando houver projetos, retirar os comentários e copiar um <li> por projeto:
+    <ul class="projects">
+      <li>
+        <img src="img/projetos/nome.jpg" alt="Nome do projeto" width="400" height="300" loading="lazy">
+        <h3>Nome do projeto</h3>
+        <p class="country">País</p>
+        <p>Breve descrição.</p>
+        <a href="https://instagram.com/..." target="_blank" rel="noopener">Instagram</a>
+      </li>
+    </ul>
+    -->
+
+    <a class="btn" href="https://www.instagram.com/vozdossabores/" target="_blank" rel="noopener">Conhece os projetos no Instagram</a>
+  </section>
+
+  <!-- 5. PROGRAMA
+       Cada linha: <li><span class="t">HORA</span><span class="a">ATIVIDADE</span></li>
+       Para acrescentar uma linha, copie uma <li> e altere o texto.
+       class="ambient" = linha de música ambiente (mais discreta). -->
   <section class="wrap" id="programa">
     <hr class="rule">
-    <h2>Programa</h2>
+    <h2>Um dia para ouvir, provar e participar.</h2>
+    <p>Entre sabores, música e atividades, queremos que cada pessoa encontre o seu lugar no festival.</p>
 
     <ol class="timeline">
-      <li><span class="t">12:30 – 13:00</span><span class="a">Abertura Voz dos Sabores</span></li>
-      <li><span class="t">13:00 – 13:30</span><span class="a">Conversa sobre imigração</span></li>
-      <li><span class="t">13:30 – 14:30</span><span class="a">Duo Kichua</span></li>
-      <li><span class="t">15:00 – 16:30</span><span class="a">Ritmos Cholulteka</span></li>
-      <li><span class="t">17:00 – 19:00</span><span class="a">Die.Groove + pintura ao vivo</span></li>
-      <li><span class="t">19:00</span><span class="a">Leilão da obra pintada ao vivo</span></li>
-      <li><span class="t">19:30 – 21:00</span><span class="a">Gadiel Salsa</span></li>
-      <li class="headliner"><span class="t">21:00 – 22:30</span><span class="a"><small>Cabeça de cartaz</small>La Tremenda Sonora</span></li>
+      <li><span class="t">12h30–13h00</span><span class="a">Abertura Voz dos Sabores</span></li>
+      <li><span class="t">13h00–13h30</span><span class="a">Conversa sobre imigração</span></li>
+      <li><span class="t">13h30–14h30</span><span class="a">Duo Kichua</span></li>
+      <li class="ambient"><span class="t">14h30–15h00</span><span class="a">Música ambiente</span></li>
+      <li><span class="t">15h00–16h30</span><span class="a">Ritmos Cholulteka</span></li>
+      <li class="ambient"><span class="t">16h30–17h00</span><span class="a">Música ambiente</span></li>
+      <li><span class="t">17h00–19h00</span><span class="a">Die.Groove + pintura ao vivo</span></li>
+      <li><span class="t">19h00–19h30</span><span class="a">Leilão da obra pintada ao vivo, com música ambiente</span></li>
+      <li><span class="t">19h30–21h00</span><span class="a">Gadiel Salsa</span></li>
+      <li class="headliner"><span class="t">21h00–22h30</span><span class="a"><small>Cabeça de cartaz</small>La Tremenda Sonora</span></li>
     </ol>
 
     <div class="allday">
@@ -86,61 +157,92 @@
         </li>
         <li>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11M8 10a4 4 0 0 0 8 0M12 18v3M8 21h8"/><rect x="9" y="3" width="6" height="10" rx="3"/></svg>
-          Apresentação ao longo do dia
+          Apresentação a cargo de uma locutora e um locutor
         </li>
         <li>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12l3 3 5-6"/><circle cx="12" cy="12" r="9"/></svg>
           Em parceria com Lisboa Latina
         </li>
       </ul>
-      <p class="note">Entre atuações, música ambiente.</p>
+      <p class="note">Programa em atualização. <a href="https://www.instagram.com/vozdossabores/" target="_blank" rel="noopener">Segue-nos no Instagram</a> para conheceres as novidades.</p>
     </div>
   </section>
 
-  <!-- 4. PARTICIPA -->
-  <section class="wrap" id="participa">
-    <hr class="rule">
-    <h2>Participa</h2>
-    <div class="cards">
-      <article class="card">
-        <h3>Tens uma banca?</h3>
-        <p>Traz a tua cozinha e conta a tua história. Escreve-nos com o teu projeto e o país que representas.</p>
-        <a class="btn btn-sm" href="mailto:vozdossabores@gmail.com?subject=Banca">Escreve-nos</a>
-      </article>
-      <article class="card">
-        <h3>Queres apoiar o festival?</h3>
-        <p>Embaixadas e marcas que queiram dar palco às culturas do mundo, connosco.</p>
-        <a class="btn btn-sm" href="mailto:vozdossabores@gmail.com?subject=Parceria">Escreve-nos</a>
-      </article>
-    </div>
-  </section>
-
-  <!-- 5. COMO CHEGAR -->
+  <!-- 6. COMO CHEGAR (sem indicações de transportes, estacionamento ou acessibilidade até estarem verificadas) -->
   <section class="wrap" id="como-chegar">
     <hr class="rule">
-    <h2>Como chegar</h2>
+    <h2>Encontramo-nos na Voz do Operário.</h2>
+    <p>O festival acontece na Voz do Operário, em Lisboa. Guarda a morada e vem passar o dia connosco.</p>
     <dl class="facts">
-      <dt>Entrada</dt><dd>Travessa de São Vicente 7, Alfama, Lisboa</dd>
-      <dt>Metro</dt><dd>Santa Apolónia</dd>
+      <dt>Morada</dt><dd>A Voz do Operário · Rua da Voz do Operário 13, 1100-621 Lisboa</dd>
+      <dt>Entrada</dt><dd>Tv. de São Vicente 7, 1100-575 Lisboa</dd>
+      <dt>Quando</dt><dd>Sábado, 17 de outubro de 2026 · 12h00–22h30</dd>
+      <dt>Preço</dt><dd>Entrada gratuita</dd>
     </dl>
     <div class="map">
-      <iframe title="Mapa: Travessa de São Vicente 7, Lisboa"
-        src="https://www.google.com/maps?q=Travessa+de+S%C3%A3o+Vicente+7,+Lisboa&amp;output=embed"
+      <iframe title="Mapa: A Voz do Operário, Tv. de São Vicente 7, Lisboa"
+        src="https://www.google.com/maps?q=Travessa+de+S%C3%A3o+Vicente+7,+1100-575+Lisboa&amp;output=embed"
         loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-    <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Travessa+de+S%C3%A3o+Vicente+7,+Lisboa" target="_blank" rel="noopener">Abrir no Google Maps →</a>
+    <a class="btn map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Travessa+de+S%C3%A3o+Vicente+7,+1100-575+Lisboa" target="_blank" rel="noopener">Abrir no Google Maps</a>
+  </section>
+
+  <!-- 7. PARTICIPA -->
+  <section class="wrap" id="participa">
+    <hr class="rule">
+    <h2>Este festival <span class="nowrap">constrói-se</span> em conjunto.</h2>
+    <p>Projetos gastronómicos, artistas, associações, instituições e marcas podem ajudar-nos a dar mais espaço às culturas que fazem parte de Lisboa. Se tens uma ideia de colaboração ou queres saber mais sobre o projeto, escreve-nos.</p>
+    <a class="btn" href="mailto:vozdossabores@gmail.com?subject=Colabora%C3%A7%C3%A3o%20Voz%20dos%20Sabores">Falar com a organização</a>
+    <div class="aside">
+      <p>Esta é a primeira edição do Voz dos Sabores. Queremos que os encontros e as parcerias que nascem aqui possam continuar em futuras edições.</p>
+      <p>Estamos a trabalhar na possibilidade de realizar até seis edições em 2027. As datas e os formatos serão anunciados quando estiverem confirmados.</p>
+    </div>
+  </section>
+
+  <!-- 8. PERGUNTAS FREQUENTES -->
+  <section class="wrap" id="perguntas">
+    <hr class="rule">
+    <h2>Perguntas frequentes</h2>
+    <div class="faq">
+      <details>
+        <summary>Quando é o Voz dos Sabores?</summary>
+        <p>No sábado, 17 de outubro de 2026, das 12h00 às 22h30.</p>
+      </details>
+      <details>
+        <summary>Onde acontece?</summary>
+        <p>Na Voz do Operário, Rua da Voz do Operário 13, 1100-621 Lisboa. A entrada do festival é pela Tv. de São Vicente 7.</p>
+      </details>
+      <details>
+        <summary>A entrada é paga?</summary>
+        <p>Não. A entrada no festival é gratuita.</p>
+      </details>
+      <details>
+        <summary>Há atividades para crianças?</summary>
+        <p>Sim, estamos a preparar atividades para os mais pequenos. Acompanha as nossas novidades para conheceres os detalhes.</p>
+      </details>
+      <details>
+        <summary>Como posso contactar a organização?</summary>
+        <p>Escreve para <a href="mailto:vozdossabores@gmail.com">vozdossabores@gmail.com</a> ou acompanha-nos no Instagram, <a href="https://www.instagram.com/vozdossabores/" target="_blank" rel="noopener">@vozdossabores</a>.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- 9. FECHO -->
+  <section class="wrap closing">
+    <p>Vem com fome de descobrir. Fica pela música, pelas pessoas e pelas histórias.</p>
   </section>
 
 </main>
 
-<!-- 6. FOOTER -->
 <footer class="footer">
   <div class="wrap">
-    <a href="https://instagram.com/vozdossabores" target="_blank" rel="noopener">@vozdossabores</a>
-    <span aria-hidden="true">·</span>
-    <a href="mailto:vozdossabores@gmail.com">vozdossabores@gmail.com</a>
-    <span aria-hidden="true">·</span>
-    <span>vozdossabores.pt</span>
+    <p class="footer-data">Voz dos Sabores · 17 de outubro de 2026 · A Voz do Operário, Lisboa · Entrada gratuita</p>
+    <p class="footer-links">
+      <a href="#como-chegar">Como chegar</a>
+      <a href="https://www.instagram.com/vozdossabores/" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:vozdossabores@gmail.com">Contacto</a>
+      <a href="en/" hreflang="en" lang="en">English</a>
+    </p>
   </div>
 </footer>
 

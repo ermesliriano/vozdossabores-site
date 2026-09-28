@@ -1,15 +1,19 @@
 # Voz dos Sabores · site
 
-Static one-page site. No build step, no database. Three things to upload:
+Static one-page site in two languages. No build step, no database. Upload:
 
-    index.html   ← all the text (programme, addresses, links)
-    style.css    ← colours and fonts (variables at the top)
-    img/         ← logo.png, favicon.png
+    index.html      ← Portuguese (PT-PT) version, all the text
+    en/index.html   ← English version (keep in step with the PT file)
+    style.css       ← colours and fonts (variables at the top), shared by both
+    img/            ← logo.png, favicon.png
 
 ## Editing
-- Programme: in index.html, each row is
+- Programme: in index.html AND en/index.html, each row is
   `<li><span class="t">HORA</span><span class="a">ATUAÇÃO</span></li>`.
-  Copy a row to add one. The headliner row has `class="headliner"`.
+  Copy a row to add one. The headliner row has `class="headliner"`;
+  background-music rows have `class="ambient"`.
+- Food projects: a commented template sits in the Gastronomia section of
+  index.html. Only publish projects the organisers have approved.
 - Colours / fonts: change the variables at the top of style.css.
   To use the flyer's condensed caps title font instead of Instrument Serif,
   add `Bebas+Neue` to the Google Fonts link in index.html and set
