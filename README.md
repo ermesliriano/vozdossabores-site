@@ -40,6 +40,16 @@ Export the new poster at 480×720 (WebP or JPG), put it in `img/instagram/`,
 and copy one `<li>` in the gallery block of both index files.
 
 
+## Post-event structure (since October 2026)
+Home page sections, in order (PT id / EN id): hero (`inicio`/`top`), video + photos
+(`video`), thanks (`obrigado`/`thanks`), 1st edition archive with the programme
+(`primeira-edicao`/`first-edition`), 2027 (`proximos-eventos`/`next-events`),
+get involved (`faz-parte`/`get-involved`), partners (`parceiros`/`partners`),
+contacts (`contactos`/`contact`).
+- Partners: only confirmed organisations and categories. A commented template in
+  index.html shows how to add Sponsors / Partners / Collaborators with logos.
+- 2027: do not publish dates, venues, number of events or artists until confirmed.
+
 ## Photos (gallery) and video
 Original photos never go into the repository. To publish new photos:
 1. Put the original JPGs in a folder called `fotos-originais/` inside the site

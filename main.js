@@ -184,3 +184,29 @@
     });
   });
 })();
+
+/* =========================================================
+   Botão "Copiar" do endereço de correio
+   ========================================================= */
+(function () {
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    var original = btn.textContent;
+    btn.addEventListener('click', function () {
+      var text = btn.dataset.copy;
+      var done = function () {
+        btn.textContent = btn.dataset.copied || '✓';
+        setTimeout(function () { btn.textContent = original; }, 2000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { fallback(); });
+      } else { fallback(); }
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'absolute'; ta.style.left = '-9999px';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+    });
+  });
+})();

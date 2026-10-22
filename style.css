@@ -384,3 +384,74 @@ section.closing { padding-top: 4.5rem; padding-bottom: clamp(130px, 18vw, 230px)
   .lb-prev, .lb-next { top: auto; bottom: .6rem; margin-top: 0; }
   .lb-caption { bottom: 1.4rem; }
 }
+
+/* =========================================================
+   PÓS-EVENTO (outubro 2026): agradecimento, 1.ª edição,
+   próximos eventos, Faz parte, parceiros, contactos
+   ========================================================= */
+:root { --magenta: #B8336A; }
+.c-magenta { color: var(--magenta); }
+
+.media-text p { margin: 0 0 .75rem; }
+.media-text .note { font-weight: 500; }
+
+.thanks p { font-size: 1.12rem; color: var(--tinta); max-width: 38rem; }
+
+.subhead {
+  font-size: .78rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--tinta); margin: 2.75rem 0 1.25rem;
+}
+.features h4 { font-size: 1.2rem; font-weight: 800; color: var(--tinta); margin: 0 0 .4rem; }
+.allday h4 { font-size: .75rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--tinta); margin: 0 0 1rem; }
+
+.btn-lg { padding: 1.15rem 1.9rem; font-size: 1rem; }
+
+.next .lead { margin-bottom: 1.5rem; }
+.next-art { margin-top: 2.5rem; }
+.next-art img { width: 100%; border-radius: 20px; }
+
+/* Faz parte: quatro propostas */
+.offers { display: grid; gap: 1rem; margin: 2rem 0 0; }
+@media (min-width: 640px) { .offers { grid-template-columns: 1fr 1fr; } }
+.offer {
+  background: var(--creme-claro); border-radius: 16px; padding: 1.4rem 1.4rem 1.2rem;
+  border-top: 5px solid currentColor;
+}
+.offer-icon { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; margin-bottom: .6rem; }
+.offer h3 { font-size: 1.15rem; font-weight: 800; line-height: 1.25; color: var(--tinta); margin-bottom: .45rem; }
+.offer p { color: var(--texto); font-size: .96rem; margin: 0; }
+
+.join-cta { margin-top: 2.5rem; padding: 2rem 1.5rem; border-radius: 20px; background: var(--tinta); color: #fff; }
+.join-close { font-size: clamp(1.4rem, 4.6vw, 2rem); font-weight: 800; line-height: 1.2; letter-spacing: -.01em; margin: 0 0 1.4rem; color: #fff; }
+.join-cta .hl { color: var(--mostarda); }
+.join-cta .btn { background: var(--coral); }
+.join-cta .btn:hover, .join-cta .btn:focus-visible { background: var(--mostarda); color: var(--tinta); }
+.join-support { margin: 1rem 0 .4rem; color: rgb(255 255 255 / .85); }
+.email-line { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .75rem; margin: 0; color: rgb(255 255 255 / .85); }
+.join-cta .email-link { color: #fff; font-weight: 700; word-break: break-all; }
+.copy-btn {
+  border: 2px solid currentColor; background: transparent; color: inherit;
+  font: 700 .78rem/1 var(--f-texto); padding: .45rem .8rem; border-radius: 999px; cursor: pointer;
+}
+.copy-btn:hover, .copy-btn:focus-visible { background: var(--mostarda); border-color: var(--mostarda); color: var(--tinta); }
+
+/* Parceiros */
+.partner-group { margin-top: 1.5rem; }
+.partner-group h3 { font-size: .78rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; margin-bottom: .9rem; }
+.partners { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .75rem; }
+.partners li { display: flex; }
+.partners a, .partner-name {
+  display: flex; align-items: center; justify-content: center; min-height: 88px; min-width: 160px;
+  padding: 1rem 1.5rem; background: #fff; border: 1px solid var(--linha); border-radius: 14px;
+  font-weight: 800; color: var(--tinta); text-decoration: none;
+}
+.partners img { max-height: 56px; max-width: 160px; width: auto; height: auto; object-fit: contain; }
+
+/* Contactos */
+.contact h2 { margin-bottom: 1.5rem; }
+.contact-list { display: grid; grid-template-columns: 6rem 1fr; gap: .8rem 1rem; margin: 0; align-items: center; }
+.contact-list dt { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--coral); }
+.contact-list dd { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .75rem; font-size: 1.1rem; font-weight: 700; }
+.contact-list a { color: var(--tinta); word-break: break-all; }
+.contact .copy-btn { color: var(--tinta); }
+@media (max-width: 420px) { .contact-list { grid-template-columns: 1fr; gap: .2rem; } .contact-list dd { margin-bottom: .8rem; } }
