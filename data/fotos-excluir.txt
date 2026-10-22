@@ -1,0 +1,2 @@
+# Fotografias que NÃO devem ser publicadas (por exemplo, sem autorização de imagem).
+# Uma por linha, só o nome do ficheiro (ex.: MGP05029.jpg).

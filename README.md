@@ -7,8 +7,11 @@ Static one-page site in two languages. No build step, no database. Upload:
     style.css       ← colours and fonts (variables at the top), shared by both
     main.js         ← gentle motion: shapes enter on scroll, light parallax,
                       Instagram gallery buttons, current-section highlight
+    galeria/        ← photo gallery page (PT); en/gallery/ is the English one
+    scripts/fotos.py← turns original photos into web versions and rebuilds the galleries
+    data/           ← photo captions, home-page selection, photos to exclude
     img/            ← logo, favicon, ilustracoes/ (web illustrations),
-                      instagram/ (posters shown in the gallery)
+                      fotos/thumb + fotos/full (generated photos), fotos/video-poster.webp
 
 ## Editing
 - Programme: in index.html AND en/index.html, each row is
@@ -35,6 +38,30 @@ Static one-page site in two languages. No build step, no database. Upload:
 ## Changing the Instagram gallery
 Export the new poster at 480×720 (WebP or JPG), put it in `img/instagram/`,
 and copy one `<li>` in the gallery block of both index files.
+
+
+## Photos (gallery) and video
+Original photos never go into the repository. To publish new photos:
+1. Put the original JPGs in a folder called `fotos-originais/` inside the site
+   folder (it is ignored by git), or anywhere else.
+2. Run `pip install pillow` once, then `python scripts/fotos.py`
+   (or `python scripts/fotos.py "C:/path/to/photos"`).
+   It creates `img/fotos/thumb/` (640 px, ~30 KB) and `img/fotos/full/`
+   (1800 px, ~150 KB), removes EXIF metadata (GPS, camera), and rewrites the
+   photo lists in `galeria/index.html`, `en/gallery/index.html` and the
+   12-photo strip on both home pages. Already converted photos are skipped.
+3. Commit and push: `img/fotos/`, the four HTML files and `data/`.
+
+Options in `data/`:
+- `fotos-destaque.txt`: which photos appear on the home page (max 12, in order).
+- `fotos-legendas.csv`: `NAME;Portuguese caption;English caption` (alt text).
+  Photos without a caption get a generic description.
+- `fotos-excluir.txt`: photos that must not be published (e.g. no image consent).
+  Listing a photo there and re-running the script removes it from the site.
+
+The Vimeo video only loads its player when someone presses play (the page shows
+`img/fotos/video-poster.webp` until then). To change the video, edit
+`data-vimeo="1237953592"` in both index files.
 
 ## Free hosting now: Render Static Site
 1. Push this folder to a new GitHub repo (e.g. `vozdossabores-site`).
